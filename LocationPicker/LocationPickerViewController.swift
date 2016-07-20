@@ -129,6 +129,16 @@ public class LocationPickerViewController: UIViewController {
 			view.addSubview(button)
 			locationButton = button
 		}
+
+        if let height = self.navigationController?.navigationBar.bounds.height {
+            let frame = CGRectMake(0, height, mapView.bounds.width, 60)
+            let infoLabel = UILabel(frame: frame)
+            infoLabel.text = "Tap and hold to select a location"
+            infoLabel.textAlignment = .Center
+            infoLabel.backgroundColor = UIColor.whiteColor()
+            infoLabel.font = UIFont(name: "Avenir Next Regular", size: 16)
+            view.addSubview(infoLabel)
+        }
 	}
 	
 	public override func viewDidLoad() {
